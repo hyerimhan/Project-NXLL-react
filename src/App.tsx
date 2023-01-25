@@ -1,9 +1,11 @@
 import './App.css'
-import { requestAPI, requestTypes } from './api/requests'
+import { ScrollRestoration, Outlet } from 'react-router-dom'
 
 function App() {
   return (
     <div>
+      <ScrollRestoration />
+      <Outlet />
     </div>
   )
 }
