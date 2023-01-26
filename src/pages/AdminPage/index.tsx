@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+type Props = {};
 
 const AdminPage = (props: Props) => {
-  return (
-    <div>AdminPage</div>
-  )
-}
+  return <div>관리자 페이지를 만들어 보자</div>;
+};
 
-export default AdminPage
+export default AdminPage;
