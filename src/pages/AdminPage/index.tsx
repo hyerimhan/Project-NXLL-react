@@ -1,9 +1,16 @@
 import React from 'react';
+import Header from '../../components/Admin/Header';
+import NavBar from '../../components/Admin/NavBar';
 
 type Props = {};
 
 const AdminPage = (props: Props) => {
-  return <div>관리자 페이지를 만들어 보자</div>;
+  return (
+    <div>
+      <Header />
+      <NavBar />
+    </div>
+  );
 };
 
 export default AdminPage;

@@ -1,0 +1,24 @@
+.header {
+  background-color: #213b85;
+  padding: 0 130px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  height: 70px;
+  img {
+    width: 80px;
+  }
+  .tapBox {
+    display: flex;
+  }
+  .login {
+    cursor: pointer;
+    background-color: #fff;
+    width: 100px;
+    height: 30;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+}
