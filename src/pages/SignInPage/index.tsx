@@ -74,16 +74,16 @@ const SignInPage = (props: Props) => {
   //   }
   // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any): void => {
     e.preventDefault();
     // if (!id) return alert('id 입력 필수');
     // else if (!password) return alert('pw 입력 필수');
     loginHandler();
   };
 
-  const handleChange = (e) => {
-    e.preventDefault()[e.target.id] = e.target.value;
-  };
+  // const handleChange = (e) => {
+  //   e.preventDefault()[e.target.id] = e.target.value;
+  // };
 
   return (
     <div>

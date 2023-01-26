@@ -5,6 +5,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'reco
 import { userState } from '../../recoil';
 
 type Props = {};
+type userData = {};
 
 const SignUpPage = (props: Props) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const SignUpPage = (props: Props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [displayName, setDisplayName] = useState();
+  const [displayName, setDisplayName] = useState('');
 
   const [user, setUser] = useRecoilState(userState);
 
@@ -43,7 +44,7 @@ const SignUpPage = (props: Props) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any): void => {
     e.preventDefault();
     // if (!id) return alert('id 입력 필수');
     // else if (!password) return alert('pw 입력 필수');
@@ -112,7 +113,9 @@ const SignUpPage = (props: Props) => {
                   id='userName'
                   type='text'
                   value={displayName}
-                  onChange={(e) => setDisplayName(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setDisplayName(e.target.value)
+                  }
                 />
               </td>
             </tr>

@@ -23,7 +23,7 @@ const Header = (props: Props) => {
       email: '',
       password: '',
     };
-    const userState = JSON.parse(localStorage.getItem('userState')) || null;
+    const userState = JSON.parse(localStorage.getItem('userState') || '');
     const accessToken = userState.accessToken;
     // console.log(accessToken);
     try {
