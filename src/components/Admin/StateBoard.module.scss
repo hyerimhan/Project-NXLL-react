@@ -1,0 +1,20 @@
+.board {
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  background-color: #213b85;
+  margin-bottom: 30px;
+  box-shadow: 0.3rem 0.3rem 0.6rem rgb(0 0 0 / 30%), -0.2rem -0.2rem 0.5rem rgb(255 255 255 / 10%);
+  border-radius: 1rem;
+  padding: 20px;
+  .title {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+    .icon {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+}
