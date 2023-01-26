@@ -13,7 +13,7 @@ const SignInPage = (props: Props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [acToken, setAcToken] = useState('');
+  // const [acToken, setAcToken] = useState('');
 
   // useEffect(() => {
 
@@ -27,19 +27,19 @@ const SignInPage = (props: Props) => {
       email,
       password,
     };
-    const accessToken = localStorage.getItem('accessToken') || null;
+    // const accessToken = await localStorage.getItem('userState');
+    // console.log(accessToken);
     // console.log(user);
-
-    if (accessToken) return;
+    // if (accessToken) return;
     try {
-      const res = await requestAPI({ type, endpoint, data, page, accessToken });
+      const res = await requestAPI({ type, endpoint, data, page, accessToken: '' });
       console.log(res);
       if (res?.status === 200) {
         setUser(res.data);
         navigate('/');
-        setAcToken(res.data.accessToken);
-        localStorage.setItem('accessToken', res.data.accessToken);
-        localStorage.setItem('userName', res.data.user.displayName);
+        // setAcToken(res.data.accessToken);
+        // localStorage.setItem('accessToken', res.data.accessToken);
+        // localStorage.setItem('userName', res.data.user.displayName);
       }
     } catch (error) {
       if (error instanceof Error) alert('조회 실패 : ' + error.message);

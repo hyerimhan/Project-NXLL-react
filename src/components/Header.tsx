@@ -4,13 +4,14 @@ import { useRecoilState } from 'recoil';
 import { userState } from '../recoil';
 import { requestAPI } from '../api/requests';
 import { useNavigate } from 'react-router-dom';
+import { strict } from 'assert';
 
 type Props = {};
 
 const Header = (props: Props) => {
   const [user, setUser] = useRecoilState(userState);
   const navigate = useNavigate();
-  const [acToken, setAcToken] = useState('');
+  // const [acToken, setAcToken] = useState('');
   // console.log(user);
 
   const logoutHandler = async () => {
@@ -22,15 +23,16 @@ const Header = (props: Props) => {
       email: '',
       password: '',
     };
-    const accessToken = localStorage.getItem('accessToken') || null;
+    const userState = JSON.parse(localStorage.getItem('userState')) || null;
+    const accessToken = userState.accessToken;
+    // console.log(accessToken);
     try {
+      // console.log(accessToken);
       const res = await requestAPI({ type, endpoint, data, page, accessToken });
       console.log(res);
-      if (res?.status === 200) {
+      if (res) {
         setUser(null);
-        // navigate('/');
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('userName');
+        navigate('/');
       }
     } catch (error) {
       if (error instanceof Error) alert('로그아웃 실패 : ' + error.message);
@@ -49,7 +51,7 @@ const Header = (props: Props) => {
           로그아웃
         </Link>
       ) : (
-        <Link to='/'>로그인</Link>
+        <Link to='/signin'>로그인</Link>
       )}
       <br />
       <Link to='/signup'>회원가입</Link>
