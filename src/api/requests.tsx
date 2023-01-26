@@ -21,7 +21,7 @@ export async function requestAPI({ type, endpoint, page, data, accessToken }: re
           masterKey: page === 'admin' ? true : false,
           Authorization: accessToken ? `Bearer ${accessToken}` : null,
         },
-        data: data ? data : null,
+        data,
       },
     );
 
@@ -29,7 +29,7 @@ export async function requestAPI({ type, endpoint, page, data, accessToken }: re
       throw new Error();
     }
 
-    return res.data;
+    return res;
   } catch (error) {
     console.log(error);
   }
