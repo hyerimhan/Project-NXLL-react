@@ -8,13 +8,7 @@ export type requestTypes = {
   accessToken: string | null;
 };
 
-export async function requestAPI({
-  type,
-  endpoint,
-  page,
-  data,
-  accessToken,
-}: requestTypes) {
+export async function requestAPI({ type, endpoint, page, data, accessToken }: requestTypes) {
   try {
     const res = await axios(
       `https://asia-northeast3-heropy-api.cloudfunctions.net/api${endpoint}`,
