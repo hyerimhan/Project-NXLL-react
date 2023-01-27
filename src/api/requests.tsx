@@ -3,9 +3,9 @@ import axios from 'axios';
 export type requestTypes = {
   type: string;
   endpoint: string;
-  page: string | null;
-  data: any;
-  accessToken: string | null;
+  page?: string | null;
+  data?: any;
+  accessToken?: string | null;
 };
 
 export async function requestAPI({ type, endpoint, page, data, accessToken }: requestTypes) {
@@ -21,7 +21,7 @@ export async function requestAPI({ type, endpoint, page, data, accessToken }: re
           masterKey: page === 'admin' ? true : false,
           Authorization: accessToken ? `Bearer ${accessToken}` : null,
         },
-        data,
+        data: data ? data : null,
       },
     );
 
