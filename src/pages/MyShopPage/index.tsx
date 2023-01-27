@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+type Props = {};
 
-type Props = {}
+const MyShopPage = async (props: Props) => {
+  return <div>MyShopPage</div>;
+};
 
-const MyShopPage = (props: Props) => {
-  return (
-    <div>MyShopPage</div>
-  )
-}
-
-export default MyShopPage
+export default MyShopPage;
