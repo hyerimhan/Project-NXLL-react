@@ -1,7 +1,7 @@
 import React from 'react';
 type Props = {};
 
-const MyShopPage = async (props: Props) => {
+const MyShopPage = (props: Props) => {
   return <div>MyShopPage</div>;
 };
 
