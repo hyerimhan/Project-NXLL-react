@@ -1,12 +1,15 @@
 import './App.css';
 import { ScrollRestoration, Outlet } from 'react-router-dom';
+import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div>
+    <RecoilRoot>
       <ScrollRestoration />
+      <Header />
       <Outlet />
-    </div>
+    </RecoilRoot>
   );
 }
 
