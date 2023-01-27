@@ -1,5 +1,5 @@
-import './App.css'
-import { ScrollRestoration, Outlet } from 'react-router-dom'
+import './App.css';
+import { ScrollRestoration, Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <ScrollRestoration />
       <Outlet />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

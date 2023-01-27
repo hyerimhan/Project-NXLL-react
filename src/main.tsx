@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         element: <SignInPage />,
       },
       {
-        path: '/admin',
+        path: '/admin/:productsStatus',
         element: <AdminPage />,
       },
       {
